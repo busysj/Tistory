@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <style>
+      a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <v-app>
+        <v-app-bar dark app class="black" height="170">
+          <v-app-bar-nav-icon
+            @click="ndrawer = true"
+            class="ml-12 pl-12"
+          ></v-app-bar-nav-icon>
+          <v-toolbar-title class="mx-auto">
+            <h3>복습노트 <v-icon> mdi-auto-fix</v-icon></h3>
+          </v-toolbar-title>
+          <v-icon class="mr-12 pr-12">mdi-magnify</v-icon>
+        </v-app-bar>
+
+        <v-navigation-drawer dark absolute temporary v-model="ndrawer">
+          <v-list class="pa-12">
+            <a href=""><v-list-item>홈</v-list-item></a>
+            <a href=""><v-list-item>1</v-list-item></a>
+            <a href=""><v-list-item>2</v-list-item></a>
+          </v-list>
+        </v-navigation-drawer>
+        <v-main class="text-center black">
+          <div>
+            <hr />
+            <h2 style="margin: 100px; color: white">전체 글</h2>
+          </div>
+        </v-main>
+      </v-app>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        vuetify: new Vuetify(),
+        data: {
+          ndrawer: false,
+        },
+      });
+    </script>
+  </body>
+</html>
