@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
+    <title>복습노트</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
       rel="stylesheet"
@@ -26,70 +26,113 @@
         text-decoration: none;
         font-weight: bold;
       }
+      .up {
+        transform: translate(0, 0);
+        transition: transform 0.5s;
+      }
+      .up:hover {
+        transform: translate(0, -2px);
+      }
+      .board {
+        width: 850px;
+      }
+      .board:hover {
+        box-shadow: 2px 0px 5px 2px gray;
+      }
+      .drawer {
+        opacity: 0.9;
+      }
       .thumbnail {
         float: left;
         width: 200px;
         height: 200px;
         margin-right: 30px;
-        background-color: #fff;
       }
       .contents {
-        display: block;
+        float: left;
+        margin-top: 10px;
+        width: 380px;
       }
       .link_title {
-        float: left;
+        text-align: left;
         font-weight: 900;
+        font-size: 30px;
+      }
+      .link_title:hover {
+        color: lightblue;
+      }
+      .information {
+        text-align: left;
+      }
+      .article {
+        text-align: left;
         font-size: 25px;
-        margin-top: 10px;
       }
-      .link_title a {
-        color: white;
-      }
-      .info {
+      .article:hover {
+        color: lightblue;
       }
     </style>
   </head>
   <body>
     <div id="app">
       <v-app>
-        <v-app-bar dark absolute app class="black" height="170">
+        <v-app-bar absolute app height="170" elevation="1" class="white">
           <v-app-bar-nav-icon
             @click="ndrawer = true"
-            class="ml-12 pl-12"
+            class="ml-12 pl-12 black--text"
           ></v-app-bar-nav-icon>
           <v-toolbar-title class="mx-auto">
-            <h3>복습노트 <v-icon> mdi-auto-fix</v-icon></h3>
+            <h3>복습노트 <v-icon class="black--text"> mdi-auto-fix</v-icon></h3>
           </v-toolbar-title>
-          <v-icon class="mr-12 pr-12">mdi-magnify</v-icon>
+          <v-icon class="mr-12 pr-12 black--text">mdi-magnify</v-icon>
         </v-app-bar>
 
-        <v-navigation-drawer dark absolute temporary v-model="ndrawer">
+        <v-navigation-drawer
+          width="350"
+          absolute
+          temporary
+          v-model="ndrawer"
+          class="drawer"
+        >
           <v-list class="pa-12">
             <a href=""><v-list-item>홈</v-list-item></a>
-            <a href=""><v-list-item>1</v-list-item></a>
-            <a href=""><v-list-item>2</v-list-item></a>
+            <a href=""><v-list-item>오답노트</v-list-item></a>
+            <a href=""><v-list-item>html</v-list-item></a>
+            <a href=""><v-list-item>css</v-list-item></a>
+            <a href=""><v-list-item>Vue</v-list-item></a>
+            <a href=""><v-list-item>React</v-list-item></a>
           </v-list>
         </v-navigation-drawer>
-        <v-main class="text-center black">
+        <v-main class="text-center">
           <div>
             <hr />
-            <h2 style="margin: 100px; color: white">전체 글</h2>
+            <h2 style="margin: 100px">전체 글</h2>
           </div>
 
-          <div class="flex-column mb-6">
+          <div class="flex-column mb-6 board mx-auto">
             <v-card
               width="850"
               height="300"
               v-for="n in 6"
               :key="n"
-              class="pa-12 mx-auto"
-              outlined
-              dark
+              class="pa-12 mx-auto up"
             >
-              <div class="thumbnail"></div>
-              <div class="contents">
-                <div class="link_title"><a href="">title</a></div>
-                <div class="information">info</div>
+              <div>
+                <div class="thumbnail">
+                  <img
+                    src="https://tistory1.daumcdn.net/tistory/4737161/skin/images/bg_empty.jpg"
+                    alt=""
+                    width="200"
+                    height="200"
+                  />
+                </div>
+                <div class="contents">
+                  <div class="link_title">title</div>
+                  <div class="information">info</div>
+                  <p class="article">
+                    내용내용내용내용내용내용내용내용내용내용내용내용내용내용aaaaaaaaaaaaaaaaaaaaaaaaaa
+                  </p>
+                </div>
               </div>
             </v-card>
           </div>
